@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn About Diamonds</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #ff4757;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-size: 3rem;
+            color: #ff4757;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .diamond-container {
+            perspective: 1000px;
+            width: 300px;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+
+        .diamond {
+            width: 100%;
+            height: 100%;
+            background: url('https://example.com/your-diamond-image.png') no-repeat center center;
+            background-size: cover;
+            transform-style: preserve-3d;
+            animation: rotateDiamond 5s linear infinite;
+        }
+
+        @keyframes rotateDiamond {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+
+        .diamond-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 80%;
+        }
+
+        .info-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px;
+            width: 45%;
+            text-align: left;
+            color: #333;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .info-box:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .info-box h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .info-box p {
+            font-size: 1rem;
+        }
+
+        a {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff4757;
+            color: #fff;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #e84118;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Diamond Price Prediction</h1>
+
+    <!-- Rotating 3D Diamond -->
+    <div class="diamond-container">
+        <div class="diamond"></div>
+    </div>
+
+    <!-- Diamond Info Section with clickable links -->
+    <div class="diamond-info">
+
+        <a href="carat.html" class="info-box">
+            <h2>Carat</h2>
+            <p>Carat refers to the weight of the diamond. The higher the carat, the larger the diamond.</p>
+        </a>
+
+        <a href="depth.html" class="info-box">
+            <h2>Depth</h2>
+            <p>Depth is the height of the diamond from the top (table) to the bottom (culet).</p>
+        </a>
+
+        <a href="color.html" class="info-box">
+            <h2>Color</h2>
+            <p>Diamond color is graded from D (colorless) to J (slightly yellow).</p>
+        </a>
+
+        <a href="clarity.html" class="info-box">
+            <h2>Clarity</h2>
+            <p>Clarity measures how free the diamond is from internal flaws or inclusions.</p>
+        </a>
+
+        <a href="cut.html" class="info-box">
+            <h2>Cut</h2>
+            <p>Cut refers to how well a diamond is cut. A better cut increases the diamond’s brilliance.</p>
+        </a>
+
+        <a href="table.html" class="info-box">
+            <h2>Table</h2>
+            <p>The table is the flat, top surface of the diamond.</p>
+        </a>
+
+        <a href="dimensions.html" class="info-box">
+            <h2>X, Y, Z Dimensions</h2>
+            <p>These refer to the physical measurements of the diamond's length, width, and height.</p>
+        </a>
+
+    </div>
+
+    <!-- Button to Diamond Price Prediction -->
+    <a href="{% url 'predict' %}">Go to Price Prediction</a>
+
+</body>
+</html>
